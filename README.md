@@ -118,6 +118,29 @@ Pasta:
 Temperature Converter/
 ```
 
+### 6. Tic Tac Toe
+
+Jogo da velha com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Jogar no navegador
+- Reiniciar partida
+- Detectar vencedor e empate
+- Placar salvo no navegador
+- Python com listas, `for` e combinações vencedoras
+
+Pasta:
+
+```text
+Tic Tac Toe/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -131,6 +154,7 @@ primeiros projetos/
 ├── Fake Login Screen/
 ├── Simple Todo List/
 ├── Temperature Converter/
+├── Tic Tac Toe/
 ├── .gitignore
 └── README.md
 ```

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="game-page">
+        <section class="game-shell">
+            <aside class="score-panel">
+                <p class="eyebrow">Projeto 6</p>
+                <h1>Jogo da Velha</h1>
+                <p class="intro">Clique nos espaços do tabuleiro, acompanhe o turno e reinicie quando quiser.</p>
+
+                <div class="score-grid">
+                    <div>
+                        <span>Jogador X</span>
+                        <strong id="scoreX">0</strong>
+                    </div>
+                    <div>
+                        <span>Empates</span>
+                        <strong id="scoreDraw">0</strong>
+                    </div>
+                    <div>
+                        <span>Jogador O</span>
+                        <strong id="scoreO">0</strong>
+                    </div>
+                </div>
+
+                <button id="resetScoreButton" class="ghost-button" type="button">Zerar placar</button>
+            </aside>
+
+            <section class="board-panel">
+                <div class="status-row">
+                    <span id="gameStatus">Vez do jogador X</span>
+                    <button id="resetGameButton" type="button">Reiniciar partida</button>
+                </div>
+
+                <div id="board" class="board" aria-label="Tabuleiro do jogo da velha">
+                    <button class="cell" type="button" data-index="0" aria-label="Posição 1"></button>
+                    <button class="cell" type="button" data-index="1" aria-label="Posição 2"></button>
+                    <button class="cell" type="button" data-index="2" aria-label="Posição 3"></button>
+                    <button class="cell" type="button" data-index="3" aria-label="Posição 4"></button>
+                    <button class="cell" type="button" data-index="4" aria-label="Posição 5"></button>
+                    <button class="cell" type="button" data-index="5" aria-label="Posição 6"></button>
+                    <button class="cell" type="button" data-index="6" aria-label="Posição 7"></button>
+                    <button class="cell" type="button" data-index="7" aria-label="Posição 8"></button>
+                    <button class="cell" type="button" data-index="8" aria-label="Posição 9"></button>
+                </div>
+
+                <p class="hint">Nova evolução: este projeto usa um placar persistente e destaca a combinação vencedora.</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
