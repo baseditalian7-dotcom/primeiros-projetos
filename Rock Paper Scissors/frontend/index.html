@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="arena-page">
+        <section class="game-layout">
+            <header class="top-panel">
+                <div>
+                    <p>Projeto 7</p>
+                    <h1>Pedra, Papel e Tesoura</h1>
+                </div>
+                <button id="resetScoreButton" type="button">Zerar placar</button>
+            </header>
+
+            <section class="score-strip">
+                <div>
+                    <span>Você</span>
+                    <strong id="playerScore">0</strong>
+                </div>
+                <div>
+                    <span>Empates</span>
+                    <strong id="drawScore">0</strong>
+                </div>
+                <div>
+                    <span>IA fake</span>
+                    <strong id="aiScore">0</strong>
+                </div>
+            </section>
+
+            <section class="arena">
+                <article class="fighter player">
+                    <span>Você escolheu</span>
+                    <strong id="playerChoice">--</strong>
+                </article>
+
+                <div class="result-core">
+                    <span>Resultado</span>
+                    <strong id="resultText">Escolha sua jogada</strong>
+                    <p id="roundText">A IA fake vai responder automaticamente.</p>
+                </div>
+
+                <article class="fighter ai">
+                    <span>IA fake escolheu</span>
+                    <strong id="aiChoice">--</strong>
+                </article>
+            </section>
+
+            <section class="controls" aria-label="Escolhas do jogador">
+                <button type="button" data-choice="pedra">Pedra</button>
+                <button type="button" data-choice="papel">Papel</button>
+                <button type="button" data-choice="tesoura">Tesoura</button>
+            </section>
+
+            <section class="history-panel">
+                <h2>Últimas rodadas</h2>
+                <ul id="historyList"></ul>
+                <p id="emptyHistory">Nenhuma rodada jogada ainda.</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

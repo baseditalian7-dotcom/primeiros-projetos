@@ -141,6 +141,28 @@ Pasta:
 Tic Tac Toe/
 ```
 
+### 7. Rock Paper Scissors
+
+Pedra, Papel e Tesoura com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Jogar contra IA fake
+- Placar salvo no navegador
+- Historico das ultimas rodadas
+- Python com dicionarios e `random.choice()`
+
+Pasta:
+
+```text
+Rock Paper Scissors/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -152,6 +174,7 @@ primeiros projetos/
 ├── Basic Calculator/
 ├── Digital Clock/
 ├── Fake Login Screen/
+├── Rock Paper Scissors/
 ├── Simple Todo List/
 ├── Temperature Converter/
 ├── Tic Tac Toe/
