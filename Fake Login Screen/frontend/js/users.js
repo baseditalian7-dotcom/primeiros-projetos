@@ -1,0 +1,5 @@
+const fakeUser = {
+    name: "Lucas",
+    email: "lucas@email.com",
+    password: "123456"
+};

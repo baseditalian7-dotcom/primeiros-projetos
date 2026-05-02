@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Login Screen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/users.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="login-card">
+            <div class="header">
+                <p>Projeto simples</p>
+                <h1>Fake Login Screen</h1>
+                <span>Validação básica com sessão simulada no navegador.</span>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" placeholder="lucas@email.com" autocomplete="email">
+                <small id="emailError"></small>
+
+                <label for="password">Senha</label>
+                <div class="password-row">
+                    <input id="password" type="password" placeholder="Digite sua senha" autocomplete="current-password">
+                    <button id="togglePassword" type="button">Mostrar</button>
+                </div>
+                <small id="passwordError"></small>
+
+                <label class="remember-row">
+                    <input id="rememberEmail" type="checkbox">
+                    Lembrar meu e-mail
+                </label>
+
+                <button class="login-button" type="submit">Entrar</button>
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <div id="loggedBox" class="logged-box" hidden>
+                <span>Login aprovado</span>
+                <strong id="loggedUser">Olá!</strong>
+                <p>Sessão fake salva no localStorage.</p>
+                <button id="logoutButton" type="button">Sair</button>
+            </div>
+
+            <div class="demo-box">
+                <span>Usuário fake</span>
+                <p>E-mail: lucas@email.com</p>
+                <p>Senha: 123456</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

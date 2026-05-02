@@ -73,6 +73,28 @@ Pasta:
 Simple Todo List/
 ```
 
+### 4. Fake Login Screen
+
+Tela de login fake com:
+
+- HTML
+- CSS
+- JavaScript
+
+Funcionalidades:
+
+- Validação básica de e-mail e senha
+- Mensagens de erro por campo
+- Mostrar e esconder senha
+- Lembrar e-mail
+- Sessão fake com LocalStorage
+
+Pasta:
+
+```text
+Fake Login Screen/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -83,6 +105,7 @@ O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, org
 primeiros projetos/
 ├── Basic Calculator/
 ├── Digital Clock/
+├── Fake Login Screen/
 ├── Simple Todo List/
 ├── .gitignore
 └── README.md
