@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="watch-page">
+        <section class="watch-shell">
+            <header class="watch-header">
+                <p>Projeto 9</p>
+                <h1>Cronômetro</h1>
+                <span>Start, pause, reset e voltas em uma interface simples.</span>
+            </header>
+
+            <section class="watch-face" aria-live="polite">
+                <div id="progressRing" class="progress-ring">
+                    <div class="time-core">
+                        <span id="stateText">Parado</span>
+                        <strong id="timeDisplay">00:00.00</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls" aria-label="Controles do cronômetro">
+                <button id="startPauseButton" class="primary" type="button">Start</button>
+                <button id="lapButton" type="button">Volta</button>
+                <button id="resetButton" type="button">Reset</button>
+            </section>
+
+            <section class="laps-panel">
+                <div class="laps-header">
+                    <h2>Voltas</h2>
+                    <span id="lapCount">0 registros</span>
+                </div>
+                <ol id="lapList"></ol>
+                <p id="emptyLaps">Nenhuma volta registrada.</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

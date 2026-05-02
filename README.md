@@ -186,6 +186,29 @@ Pasta:
 Guess the Number/
 ```
 
+### 9. Stopwatch
+
+Cronometro com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Start
+- Pause
+- Reset
+- Registro de voltas
+- Python com modulo `time`
+
+Pasta:
+
+```text
+Stopwatch/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -200,6 +223,7 @@ primeiros projetos/
 ├── Guess the Number/
 ├── Rock Paper Scissors/
 ├── Simple Todo List/
+├── Stopwatch/
 ├── Temperature Converter/
 ├── Tic Tac Toe/
 ├── .gitignore
