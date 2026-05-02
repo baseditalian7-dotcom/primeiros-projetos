@@ -163,6 +163,29 @@ Pasta:
 Rock Paper Scissors/
 ```
 
+### 8. Guess the Number
+
+Jogo de adivinhar numero com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Palpites entre 1 e 100
+- Dicas de alto ou baixo
+- Historico de palpites
+- Melhor pontuacao salva
+- Python com `try/except` e arquivo `.txt`
+
+Pasta:
+
+```text
+Guess the Number/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -174,6 +197,7 @@ primeiros projetos/
 ├── Basic Calculator/
 ├── Digital Clock/
 ├── Fake Login Screen/
+├── Guess the Number/
 ├── Rock Paper Scissors/
 ├── Simple Todo List/
 ├── Temperature Converter/

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+best_score.txt
+.env
+.venv/
+venv/
+.DS_Store
+Thumbs.db

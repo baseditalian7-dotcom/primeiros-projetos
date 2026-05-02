@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="mission-page">
+        <section class="mission-shell">
+            <header class="mission-header">
+                <div>
+                    <p>Projeto 8</p>
+                    <h1>Adivinhe o Número</h1>
+                    <span>Descubra o número secreto entre 1 e 100.</span>
+                </div>
+                <button id="newGameButton" type="button">Novo jogo</button>
+            </header>
+
+            <section class="mission-body">
+                <aside class="radar-panel">
+                    <span class="radar-label">Radar de proximidade</span>
+                    <div class="radar">
+                        <div id="radarPulse" class="radar-pulse"></div>
+                    </div>
+                    <strong id="feedbackText">Faça seu primeiro palpite.</strong>
+                    <p id="hintText">Quanto mais perto, mais forte o radar fica.</p>
+                </aside>
+
+                <section class="control-panel">
+                    <div class="stats-grid">
+                        <div>
+                            <span>Tentativas</span>
+                            <strong id="attemptCount">0</strong>
+                        </div>
+                        <div>
+                            <span>Melhor</span>
+                            <strong id="bestScore">--</strong>
+                        </div>
+                    </div>
+
+                    <form id="guessForm" class="guess-form">
+                        <label for="guessInput">Seu palpite</label>
+                        <div class="guess-row">
+                            <input id="guessInput" type="number" min="1" max="100" placeholder="1 - 100" required>
+                            <button type="submit">Tentar</button>
+                        </div>
+                    </form>
+
+                    <div class="range-line">
+                        <span>1</span>
+                        <div class="range-track">
+                            <i id="rangeMarker"></i>
+                        </div>
+                        <span>100</span>
+                    </div>
+
+                    <section class="history-box">
+                        <h2>Palpites</h2>
+                        <ul id="guessHistory"></ul>
+                        <p id="emptyHistory">Nenhum palpite ainda.</p>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
