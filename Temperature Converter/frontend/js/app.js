@@ -1,14 +1,16 @@
 const temperatureInput = document.querySelector("#temperatureInput");
-const conversionType = document.querySelector("#conversionType");
+const conversionTabs = document.querySelectorAll(".tab");
 const swapButton = document.querySelector("#swapButton");
 const formulaText = document.querySelector("#formulaText");
 const resultValue = document.querySelector("#resultValue");
 const resultMessage = document.querySelector("#resultMessage");
+const inputUnit = document.querySelector("#inputUnit");
 const historyList = document.querySelector("#historyList");
 const emptyHistory = document.querySelector("#emptyHistory");
 const clearHistoryButton = document.querySelector("#clearHistoryButton");
 
 const historyKey = "temperature_converter_history";
+let currentConversion = "celsiusToFahrenheit";
 
 function celsiusToFahrenheit(celsius) {
     return (celsius * 9 / 5) + 32;
@@ -55,7 +57,7 @@ function convertTemperature() {
     }
 
     const value = Number(rawValue);
-    const isCelsiusToFahrenheit = conversionType.value === "celsiusToFahrenheit";
+    const isCelsiusToFahrenheit = currentConversion === "celsiusToFahrenheit";
     const result = isCelsiusToFahrenheit ? celsiusToFahrenheit(value) : fahrenheitToCelsius(value);
     const fromUnit = isCelsiusToFahrenheit ? "°C" : "°F";
     const toUnit = isCelsiusToFahrenheit ? "°F" : "°C";
@@ -73,12 +75,21 @@ function convertTemperature() {
 }
 
 function updateFormula() {
-    if (conversionType.value === "celsiusToFahrenheit") {
+    if (currentConversion === "celsiusToFahrenheit") {
         formulaText.textContent = "°F = (°C × 9/5) + 32";
+        inputUnit.textContent = "°C";
         return;
     }
 
     formulaText.textContent = "°C = (°F - 32) × 5/9";
+    inputUnit.textContent = "°F";
+}
+
+function updateTabs() {
+    conversionTabs.forEach(function (tab) {
+        const isActive = tab.dataset.conversion === currentConversion;
+        tab.classList.toggle("active", isActive);
+    });
 }
 
 function renderHistory() {
@@ -98,19 +109,24 @@ function renderHistory() {
 }
 
 function swapConversion() {
-    if (conversionType.value === "celsiusToFahrenheit") {
-        conversionType.value = "fahrenheitToCelsius";
+    if (currentConversion === "celsiusToFahrenheit") {
+        currentConversion = "fahrenheitToCelsius";
     } else {
-        conversionType.value = "celsiusToFahrenheit";
+        currentConversion = "celsiusToFahrenheit";
     }
 
+    updateTabs();
     convertTemperature();
 }
 
 temperatureInput.addEventListener("input", convertTemperature);
 
-conversionType.addEventListener("change", function () {
-    convertTemperature();
+conversionTabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+        currentConversion = tab.dataset.conversion;
+        updateTabs();
+        convertTemperature();
+    });
 });
 
 temperatureInput.addEventListener("change", function () {
@@ -129,4 +145,5 @@ clearHistoryButton.addEventListener("click", function () {
 });
 
 updateFormula();
+updateTabs();
 renderHistory();

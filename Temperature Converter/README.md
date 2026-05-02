@@ -7,7 +7,8 @@ Projeto simples de conversor de temperatura para praticar HTML, CSS, JavaScript 
 - Converter Celsius para Fahrenheit
 - Converter Fahrenheit para Celsius
 - Resultado atualizado em tempo real
-- Botao para trocar o tipo de conversao
+- Controles em abas para escolher o tipo de conversao
+- Botao para inverter o tipo de conversao
 - Historico das ultimas 5 conversoes no navegador
 - Backend Python com rota de conversao
 - Teste simples do servico de conversao
@@ -18,6 +19,8 @@ Comparado com os projetos anteriores, este adiciona:
 
 - Historico de acoes no frontend usando LocalStorage
 - Conversao em tempo real enquanto o usuario digita
+- Layout diferente dos projetos anteriores, com painel lateral de resultado
+- Seletor em abas no lugar de select simples
 - Backend com funcao de conversao isolada em um service
 - Arquivo de teste simples para validar a regra do backend
 
