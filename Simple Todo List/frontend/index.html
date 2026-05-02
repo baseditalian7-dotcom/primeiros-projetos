@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="todo-card">
+            <div class="header">
+                <p>Projeto simples</p>
+                <h1>Simple Todo List</h1>
+                <span>Adicione, conclua e remova tarefas do dia.</span>
+            </div>
+
+            <form id="todoForm" class="todo-form">
+                <label for="taskInput">Nova tarefa</label>
+                <div class="input-row">
+                    <input id="taskInput" type="text" placeholder="Ex: Estudar JavaScript" required>
+                    <button type="submit">Adicionar</button>
+                </div>
+            </form>
+
+            <div class="summary">
+                <div>
+                    <span>Total</span>
+                    <strong id="totalTasks">0</strong>
+                </div>
+                <div>
+                    <span>Concluidas</span>
+                    <strong id="doneTasks">0</strong>
+                </div>
+                <div>
+                    <span>Pendentes</span>
+                    <strong id="pendingTasks">0</strong>
+                </div>
+            </div>
+
+            <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+            <p id="emptyMessage" class="empty-message">Nenhuma tarefa cadastrada ainda.</p>
+        </section>
+    </main>
+</body>
+</html>

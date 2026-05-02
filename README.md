@@ -51,6 +51,28 @@ Pasta:
 Digital Clock/
 ```
 
+### 3. Simple Todo List
+
+Lista de tarefas com:
+
+- HTML
+- CSS
+- JavaScript
+- Mini backend em Python
+
+Funcionalidades:
+
+- Adicionar tarefas
+- Remover tarefas
+- Marcar tarefas como concluidas
+- Contar tarefas totais, concluidas e pendentes
+
+Pasta:
+
+```text
+Simple Todo List/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -61,6 +83,7 @@ O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, org
 primeiros projetos/
 ├── Basic Calculator/
 ├── Digital Clock/
+├── Simple Todo List/
 ├── .gitignore
 └── README.md
 ```
