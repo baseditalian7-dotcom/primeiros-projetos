@@ -95,6 +95,29 @@ Pasta:
 Fake Login Screen/
 ```
 
+### 5. Temperature Converter
+
+Conversor de temperatura com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python
+
+Funcionalidades:
+
+- Converter Celsius para Fahrenheit
+- Converter Fahrenheit para Celsius
+- Resultado em tempo real
+- Historico das ultimas conversoes
+- Teste simples no backend
+
+Pasta:
+
+```text
+Temperature Converter/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -107,6 +130,7 @@ primeiros projetos/
 ├── Digital Clock/
 ├── Fake Login Screen/
 ├── Simple Todo List/
+├── Temperature Converter/
 ├── .gitignore
 └── README.md
 ```

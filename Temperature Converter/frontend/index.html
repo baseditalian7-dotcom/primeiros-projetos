@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="converter-card">
+            <div class="header">
+                <p>Projeto simples</p>
+                <h1>Temperature Converter</h1>
+                <span>Converta Celsius e Fahrenheit com resultado em tempo real.</span>
+            </div>
+
+            <form id="converterForm" class="converter-form">
+                <label for="temperatureInput">Temperatura</label>
+                <input id="temperatureInput" type="number" step="any" placeholder="Ex: 25" required>
+
+                <label for="conversionType">Tipo de conversão</label>
+                <div class="select-row">
+                    <select id="conversionType">
+                        <option value="celsiusToFahrenheit">Celsius para Fahrenheit</option>
+                        <option value="fahrenheitToCelsius">Fahrenheit para Celsius</option>
+                    </select>
+                    <button id="swapButton" type="button" aria-label="Trocar conversão">Trocar</button>
+                </div>
+            </form>
+
+            <div class="result-panel" aria-live="polite">
+                <span id="formulaText">°F = (°C × 9/5) + 32</span>
+                <strong id="resultValue">--</strong>
+                <p id="resultMessage">Digite uma temperatura para converter.</p>
+            </div>
+
+            <section class="history-section">
+                <div class="history-header">
+                    <h2>Histórico</h2>
+                    <button id="clearHistoryButton" type="button">Limpar</button>
+                </div>
+                <ul id="historyList" class="history-list"></ul>
+                <p id="emptyHistory" class="empty-history">Nenhuma conversão feita ainda.</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
