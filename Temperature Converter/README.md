@@ -10,8 +10,7 @@ Projeto simples de conversor de temperatura para praticar HTML, CSS, JavaScript 
 - Controles em abas para escolher o tipo de conversao
 - Botao para inverter o tipo de conversao
 - Historico das ultimas 5 conversoes no navegador
-- Backend Python com rota de conversao
-- Teste simples do servico de conversao
+- Programa Python simples no terminal para converter temperatura
 
 ## O que foi adicionado de novo
 
@@ -21,8 +20,7 @@ Comparado com os projetos anteriores, este adiciona:
 - Conversao em tempo real enquanto o usuario digita
 - Layout diferente dos projetos anteriores, com painel lateral de resultado
 - Seletor em abas no lugar de select simples
-- Backend com funcao de conversao isolada em um service
-- Arquivo de teste simples para validar a regra do backend
+- Python mais basico, usando `input()`, `if`, `elif` e `else`
 
 ## Estrutura
 
@@ -30,9 +28,7 @@ Comparado com os projetos anteriores, este adiciona:
 Temperature Converter/
 ├── backend/
 │   ├── app.py
-│   ├── converter_service.py
-│   └── tests/
-│       └── test_converter_service.py
+│   └── converter_service.py
 ├── frontend/
 │   ├── index.html
 │   ├── css/
@@ -51,7 +47,7 @@ Abra este arquivo no navegador:
 frontend/index.html
 ```
 
-## Como rodar o backend
+## Como rodar o Python
 
 Entre na pasta do backend:
 
@@ -59,42 +55,10 @@ Entre na pasta do backend:
 cd backend
 ```
 
-Rode o servidor:
+Rode o programa:
 
 ```bash
 python app.py
 ```
 
-Endpoint:
-
-```text
-POST /convert
-```
-
-Exemplo de JSON:
-
-```json
-{
-  "value": 25,
-  "conversionType": "celsiusToFahrenheit"
-}
-```
-
-Resposta:
-
-```json
-{
-  "input": 25,
-  "inputUnit": "Celsius",
-  "result": 77,
-  "resultUnit": "Fahrenheit"
-}
-```
-
-## Como rodar o teste do backend
-
-Na pasta `backend`, rode:
-
-```bash
-python tests/test_converter_service.py
-```
+O programa pergunta a temperatura com `input()` e usa `if`, `elif` e `else` para escolher entre Celsius/Fahrenheit.

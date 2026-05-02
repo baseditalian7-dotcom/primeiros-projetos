@@ -9,7 +9,7 @@ Projeto simples de calculadora basica para praticar HTML, CSS, JavaScript e um m
 - Multiplicar dois numeros
 - Dividir dois numeros
 - Calcular direto no JavaScript
-- Calcular usando um backend Python simples
+- Rodar uma versao simples no terminal com Python
 - Interface responsiva e facil de entender
 
 ## Estrutura
@@ -35,7 +35,7 @@ Abra este arquivo no navegador:
 frontend/index.html
 ```
 
-## Como rodar o backend
+## Como rodar o Python
 
 Entre na pasta do backend:
 
@@ -43,41 +43,13 @@ Entre na pasta do backend:
 cd backend
 ```
 
-Rode o servidor:
+Rode o programa:
 
 ```bash
 python app.py
 ```
 
-Depois disso, o backend ficara disponivel em:
-
-```text
-http://localhost:8000
-```
-
-## Endpoint
-
-```text
-POST /calculate
-```
-
-Exemplo de JSON:
-
-```json
-{
-  "firstNumber": 10,
-  "secondNumber": 5,
-  "operation": "multiply"
-}
-```
-
-Resposta:
-
-```json
-{
-  "result": 50
-}
-```
+O programa pergunta os numeros com `input()` e usa `if`, `elif` e `else` para escolher a operacao.
 
 ## Observacao
 

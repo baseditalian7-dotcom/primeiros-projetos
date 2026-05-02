@@ -8,19 +8,8 @@ def fahrenheit_to_celsius(fahrenheit):
 
 def convert_temperature(value, conversion_type):
     if conversion_type == "celsiusToFahrenheit":
-        return {
-            "input": value,
-            "inputUnit": "Celsius",
-            "result": round(celsius_to_fahrenheit(value), 2),
-            "resultUnit": "Fahrenheit"
-        }
-
-    if conversion_type == "fahrenheitToCelsius":
-        return {
-            "input": value,
-            "inputUnit": "Fahrenheit",
-            "result": round(fahrenheit_to_celsius(value), 2),
-            "resultUnit": "Celsius"
-        }
-
-    raise ValueError("Invalid conversion type.")
+        return round(celsius_to_fahrenheit(value), 2)
+    elif conversion_type == "fahrenheitToCelsius":
+        return round(fahrenheit_to_celsius(value), 2)
+    else:
+        return 0

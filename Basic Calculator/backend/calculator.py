@@ -20,14 +20,11 @@ def divide(first_number, second_number):
 def calculate(first_number, second_number, operation):
     if operation == "add":
         return add(first_number, second_number)
-
-    if operation == "subtract":
+    elif operation == "subtract":
         return subtract(first_number, second_number)
-
-    if operation == "multiply":
+    elif operation == "multiply":
         return multiply(first_number, second_number)
-
-    if operation == "divide":
+    elif operation == "divide":
         return divide(first_number, second_number)
-
-    raise ValueError("Invalid operation. Use add, subtract, multiply or divide.")
+    else:
+        return 0

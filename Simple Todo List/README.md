@@ -9,7 +9,7 @@ Projeto simples de lista de tarefas para praticar HTML, CSS, JavaScript e um min
 - Marcar tarefas como concluidas
 - Ver total de tarefas, concluidas e pendentes
 - Salvar tarefas no navegador com LocalStorage
-- Backend Python simples para praticar rotas e organizacao
+- Programa Python simples no terminal com menu, input e if/else
 
 ## Estrutura
 
@@ -36,7 +36,7 @@ Abra este arquivo no navegador:
 frontend/index.html
 ```
 
-## Como rodar o backend
+## Como rodar o Python
 
 Entre na pasta do backend:
 
@@ -44,35 +44,14 @@ Entre na pasta do backend:
 cd backend
 ```
 
-Rode o servidor:
+Rode o programa:
 
 ```bash
 python app.py
 ```
 
-O backend ficara disponivel em:
-
-```text
-http://localhost:8000
-```
-
-## Rotas do backend
-
-```text
-GET /tasks
-POST /tasks
-PATCH /tasks/{id}
-DELETE /tasks/{id}
-```
-
-## Exemplo de cadastro
-
-```json
-{
-  "title": "Estudar JavaScript"
-}
-```
+O programa mostra um menu no terminal para listar, adicionar, marcar e remover tarefas.
 
 ## Observacao
 
-O frontend usa LocalStorage para ser facil de abrir e testar. O backend Python existe para estudo e mostra como uma API simples poderia controlar as tarefas.
+O frontend usa LocalStorage para ser facil de abrir e testar. O Python existe para praticar logica basica com listas, menu, `input()`, `if`, `elif` e `else`.

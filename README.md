@@ -110,7 +110,7 @@ Funcionalidades:
 - Converter Fahrenheit para Celsius
 - Resultado em tempo real
 - Historico das ultimas conversoes
-- Teste simples no backend
+- Python basico com input e if/else
 
 Pasta:
 
