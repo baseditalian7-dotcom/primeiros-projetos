@@ -1,0 +1,20 @@
+# Java
+*.class
+out/
+target/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*

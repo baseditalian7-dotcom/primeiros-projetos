@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="clock-card">
+            <div class="header">
+                <p>Projeto simples</p>
+                <h1>Digital Clock</h1>
+                <span>Horário em tempo real atualizado com JavaScript.</span>
+            </div>
+
+            <label class="timezone-selector" for="timezoneSelect">
+                Escolha o fuso horário
+                <select id="timezoneSelect">
+                    <option value="America/Sao_Paulo">São Paulo</option>
+                    <option value="America/New_York">Nova York</option>
+                    <option value="Europe/London">Londres</option>
+                    <option value="Asia/Tokyo">Tóquio</option>
+                </select>
+            </label>
+
+            <div class="clock-box" aria-live="polite">
+                <span id="period">--</span>
+                <strong id="time">00:00:00</strong>
+                <p id="date">Carregando data...</p>
+            </div>
+
+            <div class="info-grid">
+                <div>
+                    <span>Dia</span>
+                    <strong id="weekDay">--</strong>
+                </div>
+                <div>
+                    <span>Fuso</span>
+                    <strong id="timezone">--</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

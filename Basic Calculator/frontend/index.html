@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="calculator-card">
+            <div class="header">
+                <p>Projeto simples</p>
+                <h1>Basic Calculator</h1>
+                <span>Soma e subtracao com HTML, CSS, JavaScript e Python.</span>
+            </div>
+
+            <form id="calculatorForm" class="calculator-form">
+                <label for="firstNumber">Primeiro numero</label>
+                <input id="firstNumber" type="number" step="any" placeholder="Ex: 10" required>
+
+                <label for="operation">Operacao</label>
+                <select id="operation" required>
+                    <option value="add">Somar</option>
+                    <option value="subtract">Subtrair</option>
+                    <option value="multiply">Multiplicar</option>
+                    <option value="divide">Dividir</option>
+                </select>
+
+                <label for="secondNumber">Segundo numero</label>
+                <input id="secondNumber" type="number" step="any" placeholder="Ex: 5" required>
+
+                <div class="actions">
+                    <button type="submit">Calcular</button>
+                    <button type="button" id="clearButton" class="secondary">Limpar</button>
+                </div>
+            </form>
+
+            <div class="result-box" aria-live="polite">
+                <span>Resultado</span>
+                <strong id="result">0</strong>
+                <p id="message">Digite dois numeros e escolha a operacao.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
