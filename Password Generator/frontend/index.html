@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="tool-page">
+        <section class="tool-shell">
+            <aside class="preview-panel">
+                <p>Projeto 10</p>
+                <h1>Gerador de Senha</h1>
+                <div class="password-display" aria-live="polite">
+                    <span id="passwordOutput">Clique em gerar</span>
+                </div>
+                <div class="strength-box">
+                    <span>Força</span>
+                    <strong id="strengthText">--</strong>
+                    <div class="strength-track">
+                        <i id="strengthBar"></i>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="settings-panel">
+                <div class="length-row">
+                    <label for="lengthInput">Tamanho da senha</label>
+                    <strong id="lengthValue">12</strong>
+                </div>
+                <input id="lengthInput" type="range" min="4" max="32" value="12">
+
+                <div class="option-list">
+                    <label>
+                        <input id="uppercaseOption" type="checkbox" checked>
+                        Letras maiúsculas
+                    </label>
+                    <label>
+                        <input id="lowercaseOption" type="checkbox" checked>
+                        Letras minúsculas
+                    </label>
+                    <label>
+                        <input id="numbersOption" type="checkbox" checked>
+                        Números
+                    </label>
+                    <label>
+                        <input id="symbolsOption" type="checkbox">
+                        Símbolos
+                    </label>
+                </div>
+
+                <div class="actions">
+                    <button id="generateButton" class="primary" type="button">Gerar senha</button>
+                    <button id="copyButton" type="button">Copiar</button>
+                </div>
+
+                <p id="messageText" class="message">Escolha as opções e gere uma senha segura.</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

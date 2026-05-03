@@ -209,6 +209,29 @@ Pasta:
 Stopwatch/
 ```
 
+### 10. Password Generator
+
+Gerador de senha com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Tamanho customizavel
+- Opcoes de caracteres
+- Copiar senha
+- Indicador de forca
+- Python com modulo `string` e `"".join()`
+
+Pasta:
+
+```text
+Password Generator/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -221,6 +244,7 @@ primeiros projetos/
 ├── Digital Clock/
 ├── Fake Login Screen/
 ├── Guess the Number/
+├── Password Generator/
 ├── Rock Paper Scissors/
 ├── Simple Todo List/
 ├── Stopwatch/
