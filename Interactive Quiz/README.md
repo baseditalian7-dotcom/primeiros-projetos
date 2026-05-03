@@ -16,7 +16,7 @@ Projeto simples de quiz interativo com perguntas, respostas e pontuacao final.
 
 Comparado com os projetos anteriores, este adiciona:
 
-- Frontend com layout de quiz, painel de progresso e tela final
+- Frontend com visual de game show, palco central e placar no rodape
 - Feedback explicando a resposta depois do clique
 - Python usando lista de dicionarios para guardar perguntas
 - Python usando `enumerate()` para numerar perguntas e respostas

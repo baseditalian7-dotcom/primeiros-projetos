@@ -9,43 +9,35 @@
 </head>
 <body>
     <main class="quiz-page">
-        <section class="quiz-shell">
-            <header class="quiz-header">
-                <div>
-                    <p>Projeto 11</p>
-                    <h1>Interactive Quiz</h1>
-                    <span>Responda perguntas rápidas e veja sua pontuação final.</span>
-                </div>
+        <section class="show-shell">
+            <div class="show-top">
+                <span>Projeto 11</span>
+                <strong>Interactive Quiz</strong>
+                <span id="progressText">Pergunta 1 de 5</span>
+            </div>
+
+            <section id="quizContent" class="show-stage">
+                <div class="category-pill" id="categoryText">Fundamentos</div>
+                <h1 id="questionText">Carregando pergunta...</h1>
+                <div id="answersList" class="answers-list"></div>
+                <p id="feedbackText" class="feedback-text"></p>
+                <button id="nextButton" class="next-button" type="button" disabled>Próxima pergunta</button>
+            </section>
+
+            <section id="finalPanel" class="final-panel" hidden>
+                <span>Resultado final</span>
+                <strong id="finalScore">0/5</strong>
+                <p id="finalMessage">Você concluiu o quiz.</p>
+                <button id="restartButton" type="button">Reiniciar quiz</button>
+            </section>
+
+            <footer class="show-footer">
+                <div id="progressDots" class="progress-dots"></div>
                 <div class="score-badge">
                     <span>Pontos</span>
                     <strong id="scoreText">0</strong>
                 </div>
-            </header>
-
-            <section class="quiz-stage">
-                <aside class="progress-panel">
-                    <span>Progresso</span>
-                    <div id="progressDots" class="progress-dots"></div>
-                    <p id="progressText">Pergunta 1 de 5</p>
-                </aside>
-
-                <section class="question-panel">
-                    <div id="quizContent">
-                        <span id="categoryText">Fundamentos</span>
-                        <h2 id="questionText">Carregando pergunta...</h2>
-                        <div id="answersList" class="answers-list"></div>
-                        <p id="feedbackText" class="feedback-text"></p>
-                        <button id="nextButton" type="button" disabled>Próxima</button>
-                    </div>
-
-                    <div id="finalPanel" class="final-panel" hidden>
-                        <span>Resultado final</span>
-                        <strong id="finalScore">0/5</strong>
-                        <p id="finalMessage">Você concluiu o quiz.</p>
-                        <button id="restartButton" type="button">Reiniciar quiz</button>
-                    </div>
-                </section>
-            </section>
+            </footer>
         </section>
     </main>
 </body>
