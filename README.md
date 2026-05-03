@@ -232,6 +232,29 @@ Pasta:
 Password Generator/
 ```
 
+### 11. Interactive Quiz
+
+Quiz interativo com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python básico
+
+Funcionalidades:
+
+- Perguntas e alternativas
+- Feedback por resposta
+- Progresso do quiz
+- Pontuacao final
+- Python com lista de dicionarios
+
+Pasta:
+
+```text
+Interactive Quiz/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -244,6 +267,7 @@ primeiros projetos/
 ├── Digital Clock/
 ├── Fake Login Screen/
 ├── Guess the Number/
+├── Interactive Quiz/
 ├── Password Generator/
 ├── Rock Paper Scissors/
 ├── Simple Todo List/

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="quiz-page">
+        <section class="quiz-shell">
+            <header class="quiz-header">
+                <div>
+                    <p>Projeto 11</p>
+                    <h1>Interactive Quiz</h1>
+                    <span>Responda perguntas rápidas e veja sua pontuação final.</span>
+                </div>
+                <div class="score-badge">
+                    <span>Pontos</span>
+                    <strong id="scoreText">0</strong>
+                </div>
+            </header>
+
+            <section class="quiz-stage">
+                <aside class="progress-panel">
+                    <span>Progresso</span>
+                    <div id="progressDots" class="progress-dots"></div>
+                    <p id="progressText">Pergunta 1 de 5</p>
+                </aside>
+
+                <section class="question-panel">
+                    <div id="quizContent">
+                        <span id="categoryText">Fundamentos</span>
+                        <h2 id="questionText">Carregando pergunta...</h2>
+                        <div id="answersList" class="answers-list"></div>
+                        <p id="feedbackText" class="feedback-text"></p>
+                        <button id="nextButton" type="button" disabled>Próxima</button>
+                    </div>
+
+                    <div id="finalPanel" class="final-panel" hidden>
+                        <span>Resultado final</span>
+                        <strong id="finalScore">0/5</strong>
+                        <p id="finalMessage">Você concluiu o quiz.</p>
+                        <button id="restartButton" type="button">Reiniciar quiz</button>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
