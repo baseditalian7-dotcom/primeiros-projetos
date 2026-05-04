@@ -9,48 +9,15 @@
 </head>
 <body>
     <main class="dashboard-app">
-        <aside class="sidebar" aria-label="Navegação do dashboard">
-            <div class="brand">
-                <span>SD</span>
-                <strong>Simple Dashboard</strong>
-            </div>
-
-            <nav class="menu" aria-label="Seções do dashboard">
-                <a class="active" href="#overview" data-section-link="overview">
-                    <span class="menu-number">01</span>
-                    <span class="menu-text">
-                        <strong>Visão geral</strong>
-                        <small>Cards principais</small>
-                    </span>
-                </a>
-                <a href="#metrics" data-section-link="metrics">
-                    <span class="menu-number">02</span>
-                    <span class="menu-text">
-                        <strong>Métricas</strong>
-                        <small>Gráfico e resumo</small>
-                    </span>
-                </a>
-                <a href="#channels" data-section-link="channels">
-                    <span class="menu-number">03</span>
-                    <span class="menu-text">
-                        <strong>Canais</strong>
-                        <small>Tabela de origem</small>
-                    </span>
-                </a>
-            </nav>
-
-            <div class="side-note">
-                <span>Projeto 11</span>
-                <strong>Dashboard fake</strong>
-                <p>Navegação lateral com seções conectadas.</p>
-            </div>
-        </aside>
-
         <section class="content">
             <header class="topbar">
-                <div>
-                    <p>Dashboard simples</p>
-                    <h1>Métricas do mês</h1>
+                <div class="title-group">
+                    <div class="logo-mark">SD</div>
+                    <div>
+                        <p>Projeto 11</p>
+                        <h1>Métricas do mês</h1>
+                        <span>Dashboard simples com cards, gráfico e dados fake.</span>
+                    </div>
                 </div>
 
                 <div class="period-tabs" aria-label="Filtro de período">
@@ -60,7 +27,7 @@
                 </div>
             </header>
 
-            <section id="overview" class="kpi-grid dashboard-section active-section" data-section="overview">
+            <section id="overview" class="kpi-grid">
                 <article class="kpi-card">
                     <span>Receita</span>
                     <strong id="revenueValue">R$ 0</strong>
@@ -83,7 +50,7 @@
                 </article>
             </section>
 
-            <section id="metrics" class="dashboard-grid dashboard-section" data-section="metrics">
+            <section id="metrics" class="dashboard-grid">
                 <article class="panel chart-panel">
                     <div class="panel-header">
                         <div>
@@ -112,7 +79,7 @@
                 </article>
             </section>
 
-            <section id="channels" class="panel table-panel dashboard-section" data-section="channels">
+            <section id="channels" class="panel table-panel">
                 <div class="panel-header">
                     <div>
                         <span>Canais</span>

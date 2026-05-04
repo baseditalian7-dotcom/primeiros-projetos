@@ -1,213 +1,70 @@
 :root {
     --bg: #eef3f8;
-    --sidebar: #0e1726;
-    --sidebar-soft: #17233a;
     --panel: #ffffff;
     --panel-soft: #f7fafc;
     --text: #152033;
     --muted: #64748b;
     --line: #d9e2ec;
     --accent: #2563eb;
+    --accent-dark: #1d4ed8;
     --accent-soft: #dbeafe;
     --good: #16a34a;
-    --warning: #f59e0b;
 }
 
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.12), transparent 34%),
+        linear-gradient(315deg, rgba(22, 163, 74, 0.08), transparent 28%),
+        var(--bg);
     color: var(--text);
 }
 
 .dashboard-app {
-    display: grid;
-    grid-template-columns: 270px 1fr;
     min-height: 100vh;
-}
-
-.sidebar {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    min-height: 100vh;
-    padding: 24px;
-    overflow: hidden;
-    background:
-        linear-gradient(155deg, rgba(37, 99, 235, 0.24), transparent 42%),
-        linear-gradient(180deg, var(--sidebar), var(--sidebar-soft));
-    color: #ffffff;
-}
-
-.sidebar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 34px 34px;
-    opacity: 0.22;
-}
-
-.brand {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 1;
-}
-
-.brand span {
-    display: grid;
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    border-radius: 14px;
-    background: var(--accent);
-    font-weight: bold;
-}
-
-.brand strong {
-    font-size: 18px;
-}
-
-.menu {
-    position: relative;
-    display: grid;
-    gap: 8px;
-    z-index: 1;
-}
-
-.menu a {
-    position: relative;
-    display: grid;
-    grid-template-columns: 38px 1fr;
-    gap: 12px;
-    min-height: 62px;
-    align-items: center;
-    padding: 10px 12px;
-    border: 1px solid transparent;
-    border-radius: 16px;
-    color: #cbd5e1;
-    text-decoration: none;
-    transition: 180ms ease;
-}
-
-.menu-number {
-    display: grid;
-    width: 34px;
-    height: 34px;
-    place-items: center;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #93c5fd;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.menu-text {
-    display: grid;
-    gap: 3px;
-}
-
-.menu-text strong {
-    font-size: 15px;
-}
-
-.menu-text small {
-    color: #94a3b8;
-    font-size: 12px;
-}
-
-.menu a.active,
-.menu a:hover {
-    transform: translateX(3px);
-}
-
-.menu a.active {
-    border-color: rgba(255, 255, 255, 0.34);
-    background: #ffffff;
-    color: var(--sidebar);
-    box-shadow: 0 18px 35px rgba(2, 6, 23, 0.25);
-}
-
-.menu a:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.10);
-    color: #ffffff;
-}
-
-.menu a.active .menu-number {
-    background: var(--accent);
-    color: #ffffff;
-}
-
-.menu a.active .menu-text small {
-    color: var(--muted);
-}
-
-.side-note {
-    position: relative;
-    display: grid;
-    gap: 6px;
-    margin-top: auto;
-    padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.08);
-    z-index: 1;
-}
-
-.side-note span {
-    color: #93c5fd;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.side-note p {
-    margin: 2px 0 0;
-    color: #cbd5e1;
-    font-size: 13px;
-    line-height: 1.5;
 }
 
 .content {
     display: grid;
+    width: min(1180px, 100%);
     gap: 22px;
     align-content: start;
-    padding: 28px;
-}
-
-.dashboard-section {
-    scroll-margin-top: 26px;
-    transition: filter 180ms ease;
-}
-
-.kpi-grid.active-section .kpi-card,
-.dashboard-grid.active-section .panel,
-.table-panel.active-section {
-    border-color: rgba(37, 99, 235, 0.35);
-    box-shadow: 0 20px 48px rgba(37, 99, 235, 0.12);
+    margin: 0 auto;
+    padding: 34px 28px;
 }
 
 .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
+    gap: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(100, 116, 139, 0.22);
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-mark {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--accent), #60a5fa);
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 18px 35px rgba(37, 99, 235, 0.22);
 }
 
 .topbar p,
@@ -218,6 +75,13 @@ body {
     font-size: 13px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.topbar span {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-weight: bold;
 }
 
 h1,
@@ -236,7 +100,8 @@ h1 {
     padding: 6px;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: var(--panel);
+    background: rgba(255, 255, 255, 0.76);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
 }
 
 button {
@@ -248,6 +113,7 @@ button {
     padding: 0 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: 160ms ease;
 }
 
 button.active,
@@ -266,7 +132,7 @@ button:hover {
 .panel {
     border: 1px solid var(--line);
     border-radius: 20px;
-    background: var(--panel);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
 }
 
@@ -421,25 +287,6 @@ td {
 }
 
 @media (max-width: 980px) {
-    .dashboard-app {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        position: static;
-        min-height: auto;
-    }
-
-    .menu {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .menu a {
-        min-height: 78px;
-        align-content: start;
-        grid-template-columns: 1fr;
-    }
-
     .kpi-grid,
     .dashboard-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -447,24 +294,12 @@ td {
 }
 
 @media (max-width: 640px) {
-    .sidebar {
-        padding: 18px;
-    }
-
-    .menu {
-        grid-template-columns: 1fr;
-    }
-
-    .menu a {
-        min-height: 58px;
-        grid-template-columns: 38px 1fr;
-    }
-
     .content {
-        padding: 18px;
+        padding: 22px 18px;
     }
 
-    .topbar {
+    .topbar,
+    .title-group {
         align-items: flex-start;
         flex-direction: column;
     }
