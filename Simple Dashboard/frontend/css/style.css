@@ -1,6 +1,7 @@
 :root {
     --bg: #eef3f8;
     --sidebar: #0e1726;
+    --sidebar-soft: #17233a;
     --panel: #ffffff;
     --panel-soft: #f7fafc;
     --text: #152033;
@@ -14,6 +15,10 @@
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -31,18 +36,38 @@ body {
 }
 
 .sidebar {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: column;
     gap: 28px;
+    min-height: 100vh;
     padding: 24px;
-    background: var(--sidebar);
+    overflow: hidden;
+    background:
+        linear-gradient(155deg, rgba(37, 99, 235, 0.24), transparent 42%),
+        linear-gradient(180deg, var(--sidebar), var(--sidebar-soft));
     color: #ffffff;
 }
 
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.22;
+}
+
 .brand {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
+    z-index: 1;
 }
 
 .brand span {
@@ -60,26 +85,81 @@ body {
 }
 
 .menu {
+    position: relative;
     display: grid;
     gap: 8px;
+    z-index: 1;
 }
 
 .menu a {
-    min-height: 44px;
-    padding: 12px 14px;
-    border-radius: 12px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    min-height: 62px;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 16px;
     color: #cbd5e1;
     text-decoration: none;
+    transition: 180ms ease;
+}
+
+.menu-number {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #93c5fd;
+    font-size: 12px;
     font-weight: bold;
+}
+
+.menu-text {
+    display: grid;
+    gap: 3px;
+}
+
+.menu-text strong {
+    font-size: 15px;
+}
+
+.menu-text small {
+    color: #94a3b8;
+    font-size: 12px;
 }
 
 .menu a.active,
 .menu a:hover {
+    transform: translateX(3px);
+}
+
+.menu a.active {
+    border-color: rgba(255, 255, 255, 0.34);
+    background: #ffffff;
+    color: var(--sidebar);
+    box-shadow: 0 18px 35px rgba(2, 6, 23, 0.25);
+}
+
+.menu a:hover:not(.active) {
     background: rgba(255, 255, 255, 0.10);
     color: #ffffff;
 }
 
+.menu a.active .menu-number {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.menu a.active .menu-text small {
+    color: var(--muted);
+}
+
 .side-note {
+    position: relative;
     display: grid;
     gap: 6px;
     margin-top: auto;
@@ -87,6 +167,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.08);
+    z-index: 1;
 }
 
 .side-note span {
@@ -96,11 +177,30 @@ body {
     text-transform: uppercase;
 }
 
+.side-note p {
+    margin: 2px 0 0;
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 .content {
     display: grid;
     gap: 22px;
     align-content: start;
     padding: 28px;
+}
+
+.dashboard-section {
+    scroll-margin-top: 26px;
+    transition: filter 180ms ease;
+}
+
+.kpi-grid.active-section .kpi-card,
+.dashboard-grid.active-section .panel,
+.table-panel.active-section {
+    border-color: rgba(37, 99, 235, 0.35);
+    box-shadow: 0 20px 48px rgba(37, 99, 235, 0.12);
 }
 
 .topbar {
@@ -327,6 +427,17 @@ td {
 
     .sidebar {
         position: static;
+        min-height: auto;
+    }
+
+    .menu {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .menu a {
+        min-height: 78px;
+        align-content: start;
+        grid-template-columns: 1fr;
     }
 
     .kpi-grid,
@@ -336,6 +447,19 @@ td {
 }
 
 @media (max-width: 640px) {
+    .sidebar {
+        padding: 18px;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .menu a {
+        min-height: 58px;
+        grid-template-columns: 38px 1fr;
+    }
+
     .content {
         padding: 18px;
     }

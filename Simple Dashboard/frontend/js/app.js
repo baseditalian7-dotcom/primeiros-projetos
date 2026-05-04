@@ -1,4 +1,6 @@
 const periodButtons = document.querySelectorAll("[data-period]");
+const menuLinks = document.querySelectorAll("[data-section-link]");
+const dashboardSections = document.querySelectorAll("[data-section]");
 const revenueValue = document.querySelector("#revenueValue");
 const salesValue = document.querySelector("#salesValue");
 const visitorsValue = document.querySelector("#visitorsValue");
@@ -108,6 +110,16 @@ function calculateConversion(sales, visitors) {
     return ((sales / visitors) * 100).toFixed(1);
 }
 
+function setActiveSection(sectionId) {
+    menuLinks.forEach(function (link) {
+        link.classList.toggle("active", link.dataset.sectionLink === sectionId);
+    });
+
+    dashboardSections.forEach(function (section) {
+        section.classList.toggle("active-section", section.dataset.section === sectionId);
+    });
+}
+
 function renderKpis(data) {
     revenueValue.textContent = formatCurrency(data.revenue);
     salesValue.textContent = formatNumber(data.sales);
@@ -200,4 +212,19 @@ periodButtons.forEach(function (button) {
     });
 });
 
+menuLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        const sectionId = link.dataset.sectionLink;
+        const section = document.querySelector(`#${sectionId}`);
+
+        event.preventDefault();
+        setActiveSection(sectionId);
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});
+
 renderDashboard("month");
+setActiveSection("overview");
