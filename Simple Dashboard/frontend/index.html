@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <main class="dashboard-app">
+        <aside class="sidebar">
+            <div class="brand">
+                <span>SD</span>
+                <strong>Simple Dashboard</strong>
+            </div>
+
+            <nav class="menu">
+                <a class="active" href="#overview">Overview</a>
+                <a href="#metrics">Métricas</a>
+                <a href="#channels">Canais</a>
+            </nav>
+
+            <div class="side-note">
+                <span>Projeto</span>
+                <strong>Dashboard fake</strong>
+            </div>
+        </aside>
+
+        <section class="content">
+            <header class="topbar">
+                <div>
+                    <p>Dashboard simples</p>
+                    <h1>Métricas do mês</h1>
+                </div>
+
+                <div class="period-tabs" aria-label="Filtro de período">
+                    <button class="active" type="button" data-period="month">Mês</button>
+                    <button type="button" data-period="week">Semana</button>
+                    <button type="button" data-period="today">Hoje</button>
+                </div>
+            </header>
+
+            <section id="overview" class="kpi-grid">
+                <article class="kpi-card">
+                    <span>Receita</span>
+                    <strong id="revenueValue">R$ 0</strong>
+                    <small id="revenueChange">+0%</small>
+                </article>
+                <article class="kpi-card">
+                    <span>Vendas</span>
+                    <strong id="salesValue">0</strong>
+                    <small id="salesChange">+0%</small>
+                </article>
+                <article class="kpi-card">
+                    <span>Visitantes</span>
+                    <strong id="visitorsValue">0</strong>
+                    <small id="visitorsChange">+0%</small>
+                </article>
+                <article class="kpi-card">
+                    <span>Conversão</span>
+                    <strong id="conversionValue">0%</strong>
+                    <small>média fake</small>
+                </article>
+            </section>
+
+            <section id="metrics" class="dashboard-grid">
+                <article class="panel chart-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span>Performance</span>
+                            <h2>Receita por dia</h2>
+                        </div>
+                        <strong id="bestDayText">Melhor dia: --</strong>
+                    </div>
+                    <div id="barChart" class="bar-chart"></div>
+                </article>
+
+                <article class="panel insight-panel">
+                    <span>Resumo</span>
+                    <h2 id="summaryTitle">Crescimento estável</h2>
+                    <p id="summaryText">As métricas fake indicam evolução positiva no período selecionado.</p>
+                    <div class="mini-metrics">
+                        <div>
+                            <small>Ticket médio</small>
+                            <strong id="ticketValue">R$ 0</strong>
+                        </div>
+                        <div>
+                            <small>Meta</small>
+                            <strong id="goalValue">0%</strong>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="channels" class="panel table-panel">
+                <div class="panel-header">
+                    <div>
+                        <span>Canais</span>
+                        <h2>Origem dos resultados</h2>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Canal</th>
+                                <th>Visitantes</th>
+                                <th>Vendas</th>
+                                <th>Receita</th>
+                                <th>Conversão</th>
+                            </tr>
+                        </thead>
+                        <tbody id="channelTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

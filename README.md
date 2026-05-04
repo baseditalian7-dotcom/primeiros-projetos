@@ -255,6 +255,29 @@ Pasta:
 Interactive Quiz/
 ```
 
+### 12. Simple Dashboard
+
+Dashboard simples com:
+
+- HTML
+- CSS
+- JavaScript
+- Backend em Python evoluindo
+
+Funcionalidades:
+
+- Cards com metricas fake
+- Grafico de barras
+- Tabela de canais
+- Filtros por periodo
+- Python com listas de dicionarios, ranking e relatorio `.txt`
+
+Pasta:
+
+```text
+Simple Dashboard/
+```
+
 ## Objetivo
 
 O objetivo dessa coleção é evoluir aos poucos, criando projetos pequenos, organizados e fáceis de explicar no GitHub.
@@ -270,6 +293,7 @@ primeiros projetos/
 ├── Interactive Quiz/
 ├── Password Generator/
 ├── Rock Paper Scissors/
+├── Simple Dashboard/
 ├── Simple Todo List/
 ├── Stopwatch/
 ├── Temperature Converter/
