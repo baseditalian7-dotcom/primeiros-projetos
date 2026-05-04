@@ -266,11 +266,12 @@ Dashboard simples com:
 
 Funcionalidades:
 
+- Header com menu superior
+- Layout organizado em grid
 - Cards com metricas fake
-- Grafico de barras
-- Tabela de canais
-- Filtros por periodo
-- Python com listas de dicionarios, ranking e relatorio `.txt`
+- Grafico simples
+- Setores com dados simulados
+- Python com listas de dicionarios, funcoes, `sorted()` e `lambda`
 
 Pasta:
 

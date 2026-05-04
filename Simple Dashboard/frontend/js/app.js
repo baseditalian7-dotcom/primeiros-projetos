@@ -1,203 +1,150 @@
-const periodButtons = document.querySelectorAll("[data-period]");
-const revenueValue = document.querySelector("#revenueValue");
-const salesValue = document.querySelector("#salesValue");
-const visitorsValue = document.querySelector("#visitorsValue");
-const conversionValue = document.querySelector("#conversionValue");
-const revenueChange = document.querySelector("#revenueChange");
-const salesChange = document.querySelector("#salesChange");
-const visitorsChange = document.querySelector("#visitorsChange");
+const menuLinks = document.querySelectorAll("[data-menu-link]");
+const sections = document.querySelectorAll(".page-section");
+const kpiGrid = document.querySelector("#kpis");
 const barChart = document.querySelector("#barChart");
-const bestDayText = document.querySelector("#bestDayText");
+const totalRevenueText = document.querySelector("#totalRevenueText");
 const summaryTitle = document.querySelector("#summaryTitle");
 const summaryText = document.querySelector("#summaryText");
-const ticketValue = document.querySelector("#ticketValue");
-const goalValue = document.querySelector("#goalValue");
-const channelTable = document.querySelector("#channelTable");
+const miniSummary = document.querySelector("#miniSummary");
+const departmentGrid = document.querySelector("#departmentGrid");
 
 const dashboardData = {
-    month: {
-        revenue: 48200,
-        sales: 386,
-        visitors: 18340,
-        change: {
-            revenue: 18,
-            sales: 11,
-            visitors: 24
-        },
-        daily: [
-            { label: "Seg", revenue: 5200 },
-            { label: "Ter", revenue: 6800 },
-            { label: "Qua", revenue: 7400 },
-            { label: "Qui", revenue: 6100 },
-            { label: "Sex", revenue: 9200 },
-            { label: "Sáb", revenue: 8100 },
-            { label: "Dom", revenue: 5400 }
-        ],
-        channels: [
-            { name: "Instagram", visitors: 7200, sales: 156, revenue: 18400 },
-            { name: "Google", visitors: 5300, sales: 122, revenue: 15200 },
-            { name: "Indicação", visitors: 2100, sales: 74, revenue: 9600 },
-            { name: "Email", visitors: 3740, sales: 34, revenue: 5000 }
+    kpis: [
+        { label: "Receita", value: "R$ 42.800", change: "+14% vs. mês anterior" },
+        { label: "Pedidos", value: "318", change: "+32 novos pedidos" },
+        { label: "Clientes", value: "96", change: "+11 clientes ativos" },
+        { label: "Satisfação", value: "94%", change: "média das avaliações" }
+    ],
+    weeklyRevenue: [
+        { label: "Sem. 1", value: 8200 },
+        { label: "Sem. 2", value: 9600 },
+        { label: "Sem. 3", value: 11300 },
+        { label: "Sem. 4", value: 13700 }
+    ],
+    summary: {
+        title: "Crescimento consistente",
+        text: "Os dados simulados mostram melhora nas vendas, boa retenção de clientes e operação estável.",
+        items: [
+            { label: "Meta mensal", value: "82%" },
+            { label: "Ticket médio", value: "R$ 134" },
+            { label: "Novos leads", value: "148" },
+            { label: "Recompra", value: "37%" }
         ]
     },
-    week: {
-        revenue: 12650,
-        sales: 91,
-        visitors: 4210,
-        change: {
-            revenue: 9,
-            sales: 7,
-            visitors: 13
-        },
-        daily: [
-            { label: "Seg", revenue: 1100 },
-            { label: "Ter", revenue: 1620 },
-            { label: "Qua", revenue: 1840 },
-            { label: "Qui", revenue: 1510 },
-            { label: "Sex", revenue: 2750 },
-            { label: "Sáb", revenue: 2440 },
-            { label: "Dom", revenue: 1390 }
-        ],
-        channels: [
-            { name: "Instagram", visitors: 1700, sales: 38, revenue: 5200 },
-            { name: "Google", visitors: 1220, sales: 26, revenue: 3600 },
-            { name: "Indicação", visitors: 490, sales: 18, revenue: 2450 },
-            { name: "Email", visitors: 800, sales: 9, revenue: 1400 }
-        ]
-    },
-    today: {
-        revenue: 1860,
-        sales: 14,
-        visitors: 620,
-        change: {
-            revenue: 4,
-            sales: 3,
-            visitors: 8
-        },
-        daily: [
-            { label: "08h", revenue: 120 },
-            { label: "10h", revenue: 240 },
-            { label: "12h", revenue: 310 },
-            { label: "14h", revenue: 180 },
-            { label: "16h", revenue: 390 },
-            { label: "18h", revenue: 410 },
-            { label: "20h", revenue: 210 }
-        ],
-        channels: [
-            { name: "Instagram", visitors: 260, sales: 7, revenue: 840 },
-            { name: "Google", visitors: 190, sales: 4, revenue: 530 },
-            { name: "Indicação", visitors: 70, sales: 2, revenue: 320 },
-            { name: "Email", visitors: 100, sales: 1, revenue: 170 }
-        ]
-    }
+    departments: [
+        { name: "Vendas", revenue: "R$ 18.900", result: "alto desempenho" },
+        { name: "Marketing", revenue: "R$ 12.400", result: "bom alcance" },
+        { name: "Suporte", revenue: "94%", result: "satisfação" }
+    ]
 };
 
-function formatCurrency(value) {
-    return new Intl.NumberFormat("pt-BR", {
+function setActiveMenu(sectionId) {
+    menuLinks.forEach(function (link) {
+        link.classList.toggle("active", link.dataset.menuLink === sectionId);
+    });
+}
+
+function renderKpis() {
+    kpiGrid.innerHTML = "";
+
+    dashboardData.kpis.forEach(function (kpi) {
+        const card = document.createElement("article");
+        card.className = "kpi-card";
+        card.innerHTML = `
+            <small>${kpi.label}</small>
+            <strong>${kpi.value}</strong>
+            <span>${kpi.change}</span>
+        `;
+        kpiGrid.appendChild(card);
+    });
+}
+
+function renderChart() {
+    const totalRevenue = dashboardData.weeklyRevenue.reduce(function (total, week) {
+        return total + week.value;
+    }, 0);
+
+    const biggestValue = Math.max(...dashboardData.weeklyRevenue.map(function (week) {
+        return week.value;
+    }));
+
+    totalRevenueText.textContent = totalRevenue.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
         maximumFractionDigits: 0
-    }).format(value);
-}
-
-function formatNumber(value) {
-    return new Intl.NumberFormat("pt-BR").format(value);
-}
-
-function calculateConversion(sales, visitors) {
-    return ((sales / visitors) * 100).toFixed(1);
-}
-
-function renderKpis(data) {
-    revenueValue.textContent = formatCurrency(data.revenue);
-    salesValue.textContent = formatNumber(data.sales);
-    visitorsValue.textContent = formatNumber(data.visitors);
-    conversionValue.textContent = `${calculateConversion(data.sales, data.visitors)}%`;
-    revenueChange.textContent = `+${data.change.revenue}%`;
-    salesChange.textContent = `+${data.change.sales}%`;
-    visitorsChange.textContent = `+${data.change.visitors}%`;
-}
-
-function renderChart(data) {
-    const highestRevenue = Math.max(...data.daily.map(function (day) {
-        return day.revenue;
-    }));
-
-    const bestDay = data.daily.find(function (day) {
-        return day.revenue === highestRevenue;
     });
 
-    bestDayText.textContent = `Melhor: ${bestDay.label}`;
     barChart.innerHTML = "";
 
-    data.daily.forEach(function (day) {
+    dashboardData.weeklyRevenue.forEach(function (week) {
+        const height = Math.max(18, (week.value / biggestValue) * 100);
         const item = document.createElement("div");
-        const height = Math.max(12, (day.revenue / highestRevenue) * 100);
 
         item.className = "bar-item";
         item.innerHTML = `
             <div class="bar" style="height: ${height}%"></div>
-            <span class="bar-label">${day.label}</span>
+            <span class="bar-label">${week.label}</span>
         `;
         barChart.appendChild(item);
     });
 }
 
-function renderSummary(data) {
-    const averageTicket = data.revenue / data.sales;
-    const goalPercent = Math.min(100, Math.round((data.revenue / 50000) * 100));
+function renderSummary() {
+    summaryTitle.textContent = dashboardData.summary.title;
+    summaryText.textContent = dashboardData.summary.text;
+    miniSummary.innerHTML = "";
 
-    ticketValue.textContent = formatCurrency(averageTicket);
-    goalValue.textContent = `${goalPercent}%`;
-
-    if (goalPercent >= 90) {
-        summaryTitle.textContent = "Meta quase batida";
-        summaryText.textContent = "O período selecionado está muito próximo da meta fake de receita.";
-    } else if (goalPercent >= 50) {
-        summaryTitle.textContent = "Crescimento estável";
-        summaryText.textContent = "As métricas fake mostram evolução saudável e bom volume de vendas.";
-    } else {
-        summaryTitle.textContent = "Período em construção";
-        summaryText.textContent = "Ainda existe espaço para aumentar visitantes, vendas e receita.";
-    }
-}
-
-function renderChannels(data) {
-    channelTable.innerHTML = "";
-
-    data.channels.forEach(function (channel) {
-        const conversion = calculateConversion(channel.sales, channel.visitors);
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${channel.name}</td>
-            <td>${formatNumber(channel.visitors)}</td>
-            <td>${formatNumber(channel.sales)}</td>
-            <td>${formatCurrency(channel.revenue)}</td>
-            <td><span class="conversion-pill">${conversion}%</span></td>
+    dashboardData.summary.items.forEach(function (item) {
+        const miniItem = document.createElement("div");
+        miniItem.className = "mini-item";
+        miniItem.innerHTML = `
+            <small>${item.label}</small>
+            <strong>${item.value}</strong>
         `;
-        channelTable.appendChild(row);
+        miniSummary.appendChild(miniItem);
     });
 }
 
-function renderDashboard(period) {
-    const data = dashboardData[period];
+function renderDepartments() {
+    departmentGrid.innerHTML = "";
 
-    renderKpis(data);
-    renderChart(data);
-    renderSummary(data);
-    renderChannels(data);
+    dashboardData.departments.forEach(function (department) {
+        const card = document.createElement("article");
+        card.className = "department-card";
+        card.innerHTML = `
+            <span>${department.name}</span>
+            <strong>${department.revenue}</strong>
+            <div class="tag">${department.result}</div>
+        `;
+        departmentGrid.appendChild(card);
+    });
 }
 
-periodButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        periodButtons.forEach(function (item) {
-            item.classList.remove("active");
-        });
+menuLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        const sectionId = link.dataset.menuLink;
+        const section = document.querySelector(`#${sectionId}`);
 
-        button.classList.add("active");
-        renderDashboard(button.dataset.period);
+        event.preventDefault();
+        setActiveMenu(sectionId);
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
     });
 });
 
-renderDashboard("month");
+window.addEventListener("scroll", function () {
+    sections.forEach(function (section) {
+        const distance = Math.abs(section.getBoundingClientRect().top - 120);
+
+        if (distance < 160) {
+            setActiveMenu(section.id);
+        }
+    });
+});
+
+renderKpis();
+renderChart();
+renderSummary();
+renderDepartments();

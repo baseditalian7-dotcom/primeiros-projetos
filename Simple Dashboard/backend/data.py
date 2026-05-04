@@ -1,57 +1,27 @@
-metrics = [
-    {
-        "period": "month",
-        "revenue": 48200,
-        "sales": 386,
-        "visitors": 18340
-    },
-    {
-        "period": "week",
-        "revenue": 12650,
-        "sales": 91,
-        "visitors": 4210
-    },
-    {
-        "period": "today",
-        "revenue": 1860,
-        "sales": 14,
-        "visitors": 620
-    }
+company_name = "Lumen Studio"
+
+kpis = [
+    {"name": "Receita", "value": 42800, "type": "money"},
+    {"name": "Pedidos", "value": 318, "type": "number"},
+    {"name": "Clientes", "value": 96, "type": "number"},
+    {"name": "Satisfacao", "value": 94, "type": "percent"},
 ]
 
-channels = [
-    {
-        "name": "Instagram",
-        "visitors": 7200,
-        "sales": 156,
-        "revenue": 18400
-    },
-    {
-        "name": "Google",
-        "visitors": 5300,
-        "sales": 122,
-        "revenue": 15200
-    },
-    {
-        "name": "Indicacao",
-        "visitors": 2100,
-        "sales": 74,
-        "revenue": 9600
-    },
-    {
-        "name": "Email",
-        "visitors": 3740,
-        "sales": 34,
-        "revenue": 5000
-    }
+weekly_revenue = [
+    {"week": "Semana 1", "value": 8200},
+    {"week": "Semana 2", "value": 9600},
+    {"week": "Semana 3", "value": 11300},
+    {"week": "Semana 4", "value": 13700},
 ]
 
-daily_revenue = [
-    {"day": "Segunda", "revenue": 5200},
-    {"day": "Terca", "revenue": 6800},
-    {"day": "Quarta", "revenue": 7400},
-    {"day": "Quinta", "revenue": 6100},
-    {"day": "Sexta", "revenue": 9200},
-    {"day": "Sabado", "revenue": 8100},
-    {"day": "Domingo", "revenue": 5400}
+departments = [
+    {"name": "Vendas", "revenue": 18900, "score": 91},
+    {"name": "Marketing", "revenue": 12400, "score": 84},
+    {"name": "Suporte", "revenue": 11500, "score": 94},
+]
+
+alerts = [
+    "Receita cresceu em relacao ao mes anterior.",
+    "Marketing trouxe mais leads do que o previsto.",
+    "Suporte manteve satisfacao alta.",
 ]

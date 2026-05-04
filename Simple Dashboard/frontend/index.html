@@ -8,100 +8,71 @@
     <script src="js/app.js" defer></script>
 </head>
 <body>
-    <main class="dashboard-app">
-        <section class="content">
-            <header class="topbar">
-                <div class="title-group">
-                    <div class="logo-mark">SD</div>
-                    <div>
-                        <p>Projeto 11</p>
-                        <h1>Métricas do mês</h1>
-                        <span>Dashboard simples com cards, gráfico e dados fake.</span>
-                    </div>
+    <main class="dashboard-page">
+        <header class="main-header">
+            <div class="brand-area">
+                <div class="logo">DB</div>
+                <div>
+                    <span>Projeto 11</span>
+                    <h1>Dashboard Simples</h1>
                 </div>
+            </div>
 
-                <div class="period-tabs" aria-label="Filtro de período">
-                    <button class="active" type="button" data-period="month">Mês</button>
-                    <button type="button" data-period="week">Semana</button>
-                    <button type="button" data-period="today">Hoje</button>
+            <nav class="top-menu" aria-label="Menu do dashboard">
+                <a class="active" href="#kpis" data-menu-link="kpis">KPIs</a>
+                <a href="#results" data-menu-link="results">Resultados</a>
+                <a href="#departments" data-menu-link="departments">Setores</a>
+            </nav>
+        </header>
+
+        <section class="hero-grid">
+            <article class="hero-card">
+                <p>Painel mensal</p>
+                <h2>Visão organizada dos números principais da empresa.</h2>
+                <span>Dados simulados para praticar layout de painel, grid e cards de métricas.</span>
+            </article>
+
+            <article class="status-card">
+                <small>Status geral</small>
+                <strong>Operação saudável</strong>
+                <div class="status-line">
+                    <span></span>
                 </div>
-            </header>
+                <p>Meta mensal em 82% com crescimento positivo.</p>
+            </article>
+        </section>
 
-            <section id="overview" class="kpi-grid">
-                <article class="kpi-card">
-                    <span>Receita</span>
-                    <strong id="revenueValue">R$ 0</strong>
-                    <small id="revenueChange">+0%</small>
-                </article>
-                <article class="kpi-card">
-                    <span>Vendas</span>
-                    <strong id="salesValue">0</strong>
-                    <small id="salesChange">+0%</small>
-                </article>
-                <article class="kpi-card">
-                    <span>Visitantes</span>
-                    <strong id="visitorsValue">0</strong>
-                    <small id="visitorsChange">+0%</small>
-                </article>
-                <article class="kpi-card">
-                    <span>Conversão</span>
-                    <strong id="conversionValue">0%</strong>
-                    <small>média fake</small>
-                </article>
-            </section>
+        <section id="kpis" class="kpi-grid page-section"></section>
 
-            <section id="metrics" class="dashboard-grid">
-                <article class="panel chart-panel">
-                    <div class="panel-header">
-                        <div>
-                            <span>Performance</span>
-                            <h2>Receita por dia</h2>
-                        </div>
-                        <strong id="bestDayText">Melhor dia: --</strong>
-                    </div>
-                    <div id="barChart" class="bar-chart"></div>
-                </article>
-
-                <article class="panel insight-panel">
-                    <span>Resumo</span>
-                    <h2 id="summaryTitle">Crescimento estável</h2>
-                    <p id="summaryText">As métricas fake indicam evolução positiva no período selecionado.</p>
-                    <div class="mini-metrics">
-                        <div>
-                            <small>Ticket médio</small>
-                            <strong id="ticketValue">R$ 0</strong>
-                        </div>
-                        <div>
-                            <small>Meta</small>
-                            <strong id="goalValue">0%</strong>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <section id="channels" class="panel table-panel">
+        <section id="results" class="content-grid page-section">
+            <article class="panel chart-panel">
                 <div class="panel-header">
                     <div>
-                        <span>Canais</span>
-                        <h2>Origem dos resultados</h2>
+                        <span>Resultados</span>
+                        <h2>Receita por semana</h2>
                     </div>
+                    <strong id="totalRevenueText">R$ 0</strong>
                 </div>
+                <div id="barChart" class="bar-chart"></div>
+            </article>
 
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Canal</th>
-                                <th>Visitantes</th>
-                                <th>Vendas</th>
-                                <th>Receita</th>
-                                <th>Conversão</th>
-                            </tr>
-                        </thead>
-                        <tbody id="channelTable"></tbody>
-                    </table>
+            <article class="panel summary-panel">
+                <span>Resumo rápido</span>
+                <h2 id="summaryTitle">Carregando...</h2>
+                <p id="summaryText">Os dados simulados serão exibidos aqui.</p>
+                <div class="mini-grid" id="miniSummary"></div>
+            </article>
+        </section>
+
+        <section id="departments" class="panel page-section">
+            <div class="panel-header">
+                <div>
+                    <span>Setores</span>
+                    <h2>Performance por área</h2>
                 </div>
-            </section>
+            </div>
+
+            <div class="department-grid" id="departmentGrid"></div>
         </section>
     </main>
 </body>

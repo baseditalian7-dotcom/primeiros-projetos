@@ -1,71 +1,58 @@
-from dashboard_service import build_report, build_summary, find_metric_by_period, get_best_day, get_channel_ranking, save_report
-from data import channels, daily_revenue, metrics
+from dashboard_service import (
+    build_dashboard_summary,
+    build_kpi_report,
+    show_alerts,
+    show_departments,
+)
 
 
 def show_menu():
-    print("\nSimple Dashboard - Python")
-    print("1 - Ver resumo do mes")
-    print("2 - Ver melhor dia")
-    print("3 - Ver ranking de canais")
-    print("4 - Exportar relatorio")
+    print("\n=== SIMPLE DASHBOARD ===")
+    print("1 - Ver KPIs")
+    print("2 - Ver resumo")
+    print("3 - Ver setores")
+    print("4 - Ver alertas")
     print("5 - Sair")
 
 
+def show_kpis():
+    print("\nKPIs do painel:")
+
+    for item in build_kpi_report():
+        print(f"- {item}")
+
+
 def show_summary():
-    metric = find_metric_by_period(metrics, "month")
-    summary = build_summary(metric)
+    summary = build_dashboard_summary()
 
-    print("\nResumo do mes")
-    print("Receita: R$", summary["revenue"])
-    print("Vendas:", summary["sales"])
-    print("Visitantes:", summary["visitors"])
-    print("Conversao:", str(summary["conversion"]) + "%")
-    print("Ticket medio: R$", summary["average_ticket"])
+    print("\nResumo do dashboard:")
+    print(f"Empresa: {summary['company']}")
+    print(f"Receita total: {summary['total_revenue']}")
+    print(f"Melhor semana: {summary['best_week']}")
+    print(f"Melhor setor: {summary['best_department']} ({summary['department_score']} pontos)")
 
 
-def show_best_day():
-    best_day = get_best_day(daily_revenue)
-
-    print("\nMelhor dia")
-    print(best_day["day"], "- R$", best_day["revenue"])
-
-
-def show_channel_ranking():
-    ranking = get_channel_ranking(channels)
-
-    print("\nRanking de canais por receita")
-
-    for index, channel in enumerate(ranking):
-        print(index + 1, "-", channel["name"], "- R$", channel["revenue"])
-
-
-def export_report():
-    metric = find_metric_by_period(metrics, "month")
-    report = build_report(metric, channels, daily_revenue)
-    save_report(report, "dashboard_report.txt")
-    print("Relatorio salvo em dashboard_report.txt")
-
-
-def run_dashboard():
-    option = ""
-
-    while option != "5":
+def main():
+    while True:
         show_menu()
         option = input("Escolha uma opcao: ")
 
         if option == "1":
-            show_summary()
+            show_kpis()
         elif option == "2":
-            show_best_day()
+            show_summary()
         elif option == "3":
-            show_channel_ranking()
+            print("\nSetores:")
+            show_departments()
         elif option == "4":
-            export_report()
+            print("\nAlertas:")
+            show_alerts()
         elif option == "5":
-            print("Programa encerrado.")
+            print("Saindo do dashboard...")
+            break
         else:
-            print("Opcao invalida.")
+            print("Opcao invalida. Tente novamente.")
 
 
 if __name__ == "__main__":
-    run_dashboard()
+    main()
